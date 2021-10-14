@@ -6,8 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <!--Indicamos el tipo de lenguaje-->
         <script language="JavaScript">
-            const diasSemana = [];
+            /*Declaramos una variable let para crear un array*/
+            let diasSemana = [];
+            /*Le damos un valor a las posiciones 0 - 6 del array*/
             diasSemana[0] = "Lunes";
             diasSemana[1] = "Martes";
             diasSemana[2] = "Miércoles";
@@ -16,7 +19,9 @@
             diasSemana[5] = "Sábado";
             diasSemana[6] = "Domingo";
 
+            /*Creamos un bucle for que se repetirá hasta que i sobrepase la longitud del array*/
             for(let i = 0; i < diasSemana.length; i++) {
+                /*Con cada vuelta del bucle sacamos por consola un día de la semana*/
                 console.log(diasSemana[i]);
             }
         </script>
