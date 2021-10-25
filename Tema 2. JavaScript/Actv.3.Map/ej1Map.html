@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ej. 3: Usuario y correo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--Indicamos el tipo de lenguaje-->
+        <script language="JavaScript">
+
+            //Creamos la clase Alumno
+            class Alumno
+           {
+               atributos(dni, nombre, notaMedia)
+                {
+                    this.dni = dni;
+                    this.nombre = nombre;
+                    this.notaMedia = notaMedia;
+                }
+
+                modificarNotaMedia(nuevaNota)
+                {
+                    alert("El alumno " + this.nombre + " tiene " + this.notaMedia + "de nota media.");
+                    this.notaMedia = nuevaNota;
+                    alert("La nota media del alumno " + this.nombre + " ha sido cambiada a " + nuevaNota);
+                }
+           }
+
+            //Creamos la clase colegio
+           class colegio
+           {
+               atributos(nombre, numeroAulas, numeroAlumnos)
+               {
+                this.nombre = nombre;
+                this.numeroAulas = numeroAulas;
+                this.numeroAlumnos = new Array();
+               
+                    for(let i = 0; i < numeroAlumnos; i++)
+                    {
+                        this.arrayAlumno[i] = new Alumno(i + " Pedro " + 5.0);
+                    }
+               }  
+           }     
+           document.write(colegio);     
+        </script>
+    </body>
+</html>
