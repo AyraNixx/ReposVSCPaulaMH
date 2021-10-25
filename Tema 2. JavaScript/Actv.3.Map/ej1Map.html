@@ -34,15 +34,16 @@
                {
                 this.nombre = nombre;
                 this.numeroAulas = numeroAulas;
-                this.numeroAlumnos = new Array();
+                this.numeroAlumnos = new Map();
                
+                //INVESTIGAR COMO REALIZAR LO DEL ARRAY
                     for(let i = 0; i < numeroAlumnos; i++)
                     {
                         this.arrayAlumno[i] = new Alumno(i + " Pedro " + 5.0);
                     }
                }  
            }     
-           document.write(colegio);     
+           
         </script>
     </body>
 </html>
