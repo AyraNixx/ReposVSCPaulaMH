@@ -12,7 +12,15 @@
             //Creamos la clase Alumno
             class Alumno
            {
-               atributos(dni, nombre, notaMedia)
+
+                constructor(dni, nombre, notaMedia)
+                {
+                    this.dni = dni;
+                    this.nombre = nombre;
+                    this.notaMedia = notaMedia;
+                }
+
+               setValores(dni, nombre, notaMedia)
                 {
                     this.dni = dni;
                     this.nombre = nombre;
@@ -23,27 +31,38 @@
                 {
                     alert("El alumno " + this.nombre + " tiene " + this.notaMedia + "de nota media.");
                     this.notaMedia = nuevaNota;
-                    alert("La nota media del alumno " + this.nombre + " ha sido cambiada a " + nuevaNota);
+                    alert("La nota media del alumno " + this.nombre + " ha sido modificada a " + nuevaNota);
                 }
-           }
 
+               // consultarNota()
+           }
+           
             //Creamos la clase colegio
-           class colegio
+           class Colegio
            {
                atributos(nombre, numeroAulas, numeroAlumnos)
                {
                 this.nombre = nombre;
                 this.numeroAulas = numeroAulas;
-                this.numeroAlumnos = new Map();
+                this.arrayAlumno = new Array();
                
                 //INVESTIGAR COMO REALIZAR LO DEL ARRAY
                     for(let i = 0; i < numeroAlumnos; i++)
                     {
-                        this.arrayAlumno[i] = new Alumno(i + " Pedro " + 5.0);
+                        this.arrayAlumno[i] = new Alumno(i + " Alumno " + 5.0);
                     }
                }  
-           }     
-           
+               /*consultarNotamedia(n){
+                   this.arrayAlumno[n].consultarNota();
+               }*/
+
+           }  
+
+           function main()
+           {
+                let alumno = new Alumno(2, "Pedro", 32.1);
+                document.write(alumno.dni);
+           }
         </script>
     </body>
 </html>
