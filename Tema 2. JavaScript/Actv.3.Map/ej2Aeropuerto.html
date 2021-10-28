@@ -9,8 +9,8 @@
         <!--Indicamos el tipo de lenguaje-->
         <script language="JavaScript">
 
-            //Creamos la clase VUelo
-            class VUelo
+            //Creamos la clase Vuelo
+            class Vuelo
             {
                 constructor(codigo, hora_llegada, hora_salida)
                 {
@@ -25,10 +25,10 @@
                     alert("Se ha modificado la hora de llegada a --> " + nuevaHoraLlegada);
                 }
 
-                modificarHoraLlegada(nuevaHoraLlegada)
+                modificarHoraSalida(nuevaHoraSalida)
                 {
-                    this.hora_llegada = nuevaHoraLlegada;
-                    alert("Se ha modificado la hora de llegada a --> " + nuevaHoraLlegada);
+                    this.hora_salida = nuevaHoraSalida;
+                    alert("Se ha modificado la hora de salida a --> " + nuevaHoraLlegada);
                 }
             }
 
@@ -40,52 +40,29 @@
                 {
                     this.nombre = nombre;
                     this.ciudad = ciudad;
-                    this.nVuelosDiarios = new Array();
-                }
+                    this.arrayVuelos = new Array();
 
-               /*setValores(dni, nombre, notaMedia)
-                {
-                    this.dni = dni;
-                    this.nombre = nombre;
-                    this.notaMedia = notaMedia;
-                }*/
 
-                modificarNotaMedia(nuevaNota)
-                {
-                    this.notaMedia = nuevaNota;
-                    alert("La nota media del alumno " + this.nombre + " ha sido modificada a " + nuevaNota);
-                }
-
-               consultarNota()
-               {
-                    alert("El alumno, " + this.nombre + ", tiene una nota media de " + this.notaMedia)
-               }
-           }
-           
-            //Creamos la clase colegio
-           class Colegio
-           {
-               constructor(nombre, numeroAulas, numeroAlumnos)
-               {
-                this.nombre = nombre;
-                this.numeroAulas = numeroAulas;
-                this.arrayAlumnos = new Array();
-               
-                //INVESTIGAR COMO REALIZAR LO DEL ARRAY
-                    for(let i = 0; i < numeroAlumnos; i++)
+                    for(let i = 0; i < nVuelosDiarios; i++)
                     {
-                        this.arrayAlumnos[i] = new Alumno(i + " Alumno " + i, 5.0);
+                        this.arrayVuelos[i] = new Vuelo(i + "" + "18:35:00");
                     }
-               }  
-               consultarNotamedia(n){
-                   this.arrayAlumnos[n].consultarNota();
+                }
+
+                modificarHoraLlegada(n, nuevaHoraLlegada){
+                   this.arrayVuelos[n].modificarHoraLlegada(nuevaHoraLlegada);
                }
-               cambiarNotaMedia(n, notaNueva)
+               modificarHoraSalida(n, nuevaHoraSalida)
                {
-                    this.arrayAlumnos[n].cambiarNotaMedia(nuevaNota);
+                    this.arrayVuelos[n].modificarHoraSalida(nuevaHoraSalida);
                }
 
-           }  
+               comprobarHora()
+               {
+                    this.arrayVuelos[n].hora_salida
+               }
+
+           }
 
            function main()
            {
