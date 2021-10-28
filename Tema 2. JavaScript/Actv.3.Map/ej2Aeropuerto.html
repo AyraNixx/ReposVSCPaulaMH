@@ -22,13 +22,18 @@
                 modificarHoraLlegada(nuevaHoraLlegada)
                 {
                     this.hora_llegada = nuevaHoraLlegada;
-                    alert("Se ha modificado la hora de llegada a --> " + nuevaHoraLlegada);
+                    alert("Se ha modificado la hora de llegada a --> " + this.hora_llegada);
                 }
 
                 modificarHoraSalida(nuevaHoraSalida)
                 {
                     this.hora_salida = nuevaHoraSalida;
-                    alert("Se ha modificado la hora de salida a --> " + nuevaHoraLlegada);
+                    alert("Se ha modificado la hora de salida a --> " + this.hora_salida);
+                }
+                consultarHoraLlegada()
+                {
+                    return this.hora_llegada;
+                    
                 }
             }
 
@@ -45,37 +50,56 @@
 
                     for(let i = 0; i < nVuelosDiarios; i++)
                     {
-                        this.arrayVuelos[i] = new Vuelo(i + "" + "18:35:00");
+                        this.arrayVuelos[i] = new Vuelo(i + "12:00:21" + "18:35:00");
                     }
                 }
 
-                modificarHoraLlegada(n, nuevaHoraLlegada){
-                   this.arrayVuelos[n].modificarHoraLlegada(nuevaHoraLlegada);
-               }
-               modificarHoraSalida(n, nuevaHoraSalida)
-               {
+                modificarHoraLlegada(n, nuevaHoraLlegada)
+                {
+                    this.arrayVuelos[n].modificarHoraLlegada(nuevaHoraLlegada);
+                }
+                modificarHoraSalida(n, nuevaHoraSalida)
+                {
                     this.arrayVuelos[n].modificarHoraSalida(nuevaHoraSalida);
-               }
+                }
 
-               comprobarHora()
-               {
-                    this.arrayVuelos[n].hora_salida
-               }
+                comprobarHora()
+                {
+                    if (this.arrayVuelos[n].hora_salida > this.arrayVuelos[n].hora_llegada)
+                    {
+                        alert("La hora de salida es posterior a la hora de llegada");
+                    }
+                }
 
            }
 
            function main()
            {
-                let colegio = new Colegio("IES Candelaria de los Rosales", 45, 13);
+               let aeropuerto = new Aeropuerto("Aeropuerto Ciudad Real", "Ciudad Real", 5);
 
-                document.write(colegio.nombre);
+               document.write(aeropuerto.nombre);
+               document.write("<br>");
+               document.write(aeropuerto.ciudad);
+               document.write("<br>");
+               document.write(aeropuerto.arrayVuelos[0].consultarHoraLlegada());
+               document.write("<br>");
+               document.write(aeropuerto.arrayVuelos[1].consultarHoraLlegada());
+               document.write("<br>");
+               document.write(aeropuerto.arrayVuelos[2].consultarHoraLlegada());
+               document.write("<br>");
+               document.write(aeropuerto.arrayVuelos[3].consultarHoraLlegada());
+               document.write("<br>");
+               document.write(aeropuerto.arrayVuelos[4].consultarHoraLlegada());
+               document.write("<br>");
+               aeropuerto.arrayVuelos[3].modificarHoraLlegada("02:20:01");
+                /*document.write(colegio.nombre);
                 document.write("<br>")
                 document.write(colegio.numeroAulas);
                 document.write("<br>")
                 document.write(colegio.arrayAlumnos);
 
                 let alumno = new Alumno(2, "Pedro", 32.1);
-                document.write(alumno.nombre);
+                document.write(alumno.nombre);*/
            }
            main();
         </script>
