@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ej. 3: Hospital</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--Indicamos el tipo de lenguaje-->
+        <script language="JavaScript">
+
+            //Creamos la clase Paciente
+            class Paciente
+           {
+
+                constructor(dni, nombre, enfermedad)
+                {
+                    this.dni = dni;
+                    this.nombre = nombre;
+                    this.enfermedad = enfermedad;
+                }
+           }
+           
+            //Creamos la clase Hospital
+           class Hospital
+           {
+               constructor(nombre, ciudad, numPacientes)
+               {
+                this.nombre = nombre;
+                this.ciudad = ciudad;
+                this.arrayPacientes = new Array();
+               
+                //Añadimos pacientes al array para guardarlos
+                    for(let i = 0; i < numPacientes; i++)
+                    {
+                        this.arrayPacientes[i] = new Paciente(i, " Paciente", " Pulmonía");
+                    }
+               }  
+               altaPaciente(n){
+                arrayPacientes[n].classList.remove();
+                alert("El paciente " + n + "ha sido dado de alta");
+               }           
+
+           }  
+
+           function main()
+           {
+                let hospital = new Hospital("Rosales", "El Puerto", 6);
+
+                document.write(hospital.nombre);
+                document.write("<br>");
+                document.write(hospital.ciudad);
+                document.write("<br>");
+                
+                //Con Object value podemos obtener los valores de un objeto
+
+                for(let i = 0; i<=hospital.arrayPacientes.length; i++){
+                    document.write(Object.values(hospital.arrayPacientes[i]));
+                    document.write("<br>");
+                }
+                Object.values(hospital.arrayPacientes[7]);
+           }
+           main();
+        </script>
+    </body>
+</html>
