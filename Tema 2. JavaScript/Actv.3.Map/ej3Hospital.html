@@ -9,6 +9,8 @@
         <!--Indicamos el tipo de lenguaje-->
         <script language="JavaScript">
 
+            "use strict";
+
             //Creamos la clase Paciente
             class Paciente
            {
@@ -24,6 +26,7 @@
             //Creamos la clase Hospital
            class Hospital
            {
+               //Constructor de la clase Hospital
                constructor(nombre, ciudad, numPacientes)
                {
                 this.nombre = nombre;
@@ -36,9 +39,13 @@
                         this.arrayPacientes[i] = new Paciente(i, " Paciente", " Pulmonía");
                     }
                }  
+               //Damos de alta al paciente
                altaPaciente(n){
-                arrayPacientes[n].classList.remove();
-                alert("El paciente " + n + "ha sido dado de alta");
+                    //Eliminamos al paciente n del array
+                    //cambia el contenido de un array eliminando elementos 
+                    //existentes y/o agregando nuevos elementos
+                    this.arrayPacientes.splice(n, 1);
+                    alert("El paciente " + n + "ha sido dado de alta");
                }           
 
            }  
@@ -53,7 +60,6 @@
                 document.write("<br>");
                 
                 //Con Object value podemos obtener los valores de un objeto
-
                 for(let i = 0; i<=hospital.arrayPacientes.length; i++){
                     document.write(Object.values(hospital.arrayPacientes[i]));
                     document.write("<br>");
